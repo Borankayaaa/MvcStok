@@ -1,0 +1,28 @@
+﻿@model MvcStok.Models.Entity.TBLMusteri
+@{
+    ViewBag.Title = "CreateMusteri";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h2>CreateMusteri</h2>
+<form method="post">
+    <h2>Yeni Müşteri Ekleme</h2>
+    <br />
+    <label>Müşteri Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Ad, "", new { @style = "color:red" })
+    <br />
+    <label>Müşteri Soyad</label>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Soyad, "", new { @style = "color:red" })
+    <br />
+    <label>Şehir</label>
+    @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+    <br />
+    <label>Bakiye</label>
+    @Html.TextBoxFor(x => x.Bakıye, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet   </button>
+
+</form>
+

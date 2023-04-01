@@ -1,0 +1,31 @@
+﻿@model MvcStok.Models.Entity.TBLUrunler
+@{
+    ViewBag.Title = "CreateUrün";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+
+<form method="post">
+    <h2>Yeni Ürün Ekleme</h2>
+    <br />
+    <label>Ürün Adı</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <label>Marka</label>
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    <label>Stok Adedi</label>
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    <label>Alış Fiyat</label>
+    @Html.TextBoxFor(x => x.AlısFiyat, new { @class = "form-control" })
+    <label>Satış Fiyat</label>
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <label>Kategori</label>
+    @Html.DropDownListFor(x=>x.TBLKategori.Id,(List<SelectListItem>)ViewBag.drop,new {@class="form-control"})
+    <button class="btn btn-info"> Kaydet   </button>
+
+</form>
+
+
+

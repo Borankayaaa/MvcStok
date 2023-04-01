@@ -1,0 +1,16 @@
+﻿@model MvcStok.Models.Entity.TBLKategori
+@{
+    ViewBag.Title = "UpdateKategori";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateKategori", "Kategori", FormMethod.Post))
+{
+    <h2>Kategori Güncelleme</h2>
+    <br />
+    @Html.HiddenFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <button class="btn btn-warning"> Güncelle   </button>
+}
+

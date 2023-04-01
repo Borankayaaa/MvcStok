@@ -1,0 +1,54 @@
+﻿@model List<MvcStok.Models.Entity.TBLUrunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br     />
+
+@using (Html.BeginForm("Index", "Urün", FormMethod.Get))
+{
+    <p>
+        Ürün Adı:@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th> Id   </th>
+        <th> Ad  </th>
+        <th> Marka   </th>
+        <th> Stok   </th>
+        <th> Alış Fiyat   </th>
+        <th> Satış Fiyat   </th>
+        <th> Kategori Adı   </th>
+        <th> Sil   </th>
+        <th> Güncelle   </th>
+
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.Id</td>
+            <td>@x.Ad</td>
+            <td>@x.Marka</td>
+            <td>@x.Stok</td>
+            <td>@x.AlısFiyat</td>
+            <td>@x.SatisFiyat</td>
+            <td>@x.TBLKategori.Ad</td>
+            <td><a href="/Urün/DeleteUrün/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urün/GetUrün/@x.Id" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+
+
+
+    }
+</table>
+<a href="/Urün/CreateUrün/" class="btn btn-success">Yeni Ürün Girişi</a>
